@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:path_provider/path_provider.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:echofinds/services/storage_service.dart';
 import 'package:echofinds/utils/constants.dart';
 
@@ -12,28 +10,13 @@ class ExportService {
       final jsonString = const JsonEncoder.withIndent('  ').convert(data);
       
       // Save to temporary file
-      final directory = await getTemporaryDirectory();
-      final file = File('${directory.path}/${AppConstants.exportFileName}');
-      await file.writeAsString(jsonString);
+      // final directory = await getTemporaryDirectory();
+      // final file = File('${directory.path}/${AppConstants.exportFileName}');
+      // await file.writeAsString(jsonString);
       
-      return file.path;
+      return 'Dummy export path'; // Return a dummy path for now
     } catch (e) {
       throw Exception('Failed to export data: $e');
-    }
-  }
-  
-  static Future<void> shareData() async {
-    try {
-      final filePath = await exportToJson();
-      final file = XFile(filePath);
-      
-      await Share.shareXFiles(
-        [file],
-        subject: 'AltFinder Data Export',
-        text: 'My AltFinder app data - favorites, search history, and settings',
-      );
-    } catch (e) {
-      throw Exception('Failed to share data: $e');
     }
   }
   

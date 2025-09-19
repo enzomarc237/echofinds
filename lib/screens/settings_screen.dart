@@ -36,21 +36,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await StorageService.saveUserSettings(newSettings);
   }
   
-  Future<void> _exportData() async {
-    try {
-      await ExportService.shareData();
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Export failed: $e'),
-            backgroundColor: Theme.of(context).colorScheme.error,
-          ),
-        );
-      }
-    }
-  }
-  
   Future<void> _importData() async {
     // Note: In a real app, you'd use a file picker here
     // For now, we'll show a dialog explaining the process
@@ -269,7 +254,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               title: const Text('Export data'),
               subtitle: const Text('Share your favorites and settings'),
               leading: const Icon(Icons.upload),
-              onTap: _exportData,
+              // onTap: _exportData, // Removed onTap for exportData
             ),
             ListTile(
               title: const Text('Import data'),

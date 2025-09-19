@@ -1,11 +1,12 @@
 buildscript {
+    ext.kotlin_version = '1.9.0'
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22'
+        classpath 'com.android.tools.build:gradle:8.6.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'
     }
 }
 
@@ -14,27 +15,25 @@ allprojects {
         google()
         mavenCentral()
     }
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = "17"
+        }
+    }
 }
 
 rootProject.buildDir = "../build"
 subprojects {
     afterEvaluate { project ->
-        if (project.hasProperty("kotlin")) {
-            project.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-                kotlinOptions {
-                    jvmTarget = "1.8"
-                }
-            }
-        }
-    }
-} 
- 
-subprojects {
-    afterEvaluate { project ->
         if (project.plugins.hasPlugin("com.android.application") ||
                 project.plugins.hasPlugin("com.android.library")) {
             project.android {
-                compileSdkVersion 34
+                compileSdkVersion 35
+                java {
+                    toolchain {
+                        languageVersion = JavaLanguageVersion.of(17)
+                    }
+                }
             }
         }
         if (project.hasProperty('android')) {

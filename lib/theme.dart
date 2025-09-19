@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LightModeColors {
   static const lightPrimary = Color(0xFF2196F3);
@@ -91,65 +90,80 @@ ThemeData get lightTheme => ThemeData(
     surfaceTintColor: Colors.transparent,
   ),
   textTheme: TextTheme(
-    displayLarge: GoogleFonts.inter(
+    displayLarge: TextStyle(
       fontSize: FontSizes.displayLarge,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    displayMedium: GoogleFonts.inter(
+    displayMedium: TextStyle(
       fontSize: FontSizes.displayMedium,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    displaySmall: GoogleFonts.inter(
+    displaySmall: TextStyle(
       fontSize: FontSizes.displaySmall,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    headlineLarge: GoogleFonts.inter(
+    headlineLarge: TextStyle(
       fontSize: FontSizes.headlineLarge,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    headlineMedium: GoogleFonts.inter(
+    headlineMedium: TextStyle(
       fontSize: FontSizes.headlineMedium,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    headlineSmall: GoogleFonts.inter(
+    headlineSmall: TextStyle(
       fontSize: FontSizes.headlineSmall,
       fontWeight: FontWeight.bold,
+      fontFamily: 'Roboto',
     ),
-    titleLarge: GoogleFonts.inter(
+    titleLarge: TextStyle(
       fontSize: FontSizes.titleLarge,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    titleMedium: GoogleFonts.inter(
+    titleMedium: TextStyle(
       fontSize: FontSizes.titleMedium,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    titleSmall: GoogleFonts.inter(
+    titleSmall: TextStyle(
       fontSize: FontSizes.titleSmall,
       fontWeight: FontWeight.w500,
+      fontFamily: 'Roboto',
     ),
-    labelLarge: GoogleFonts.inter(
+    labelLarge: TextStyle(
       fontSize: FontSizes.labelLarge,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    labelMedium: GoogleFonts.inter(
+    labelMedium: TextStyle(
       fontSize: FontSizes.labelMedium,
       fontWeight: FontWeight.w500,
+      fontFamily: 'Roboto',
     ),
-    labelSmall: GoogleFonts.inter(
+    labelSmall: TextStyle(
       fontSize: FontSizes.labelSmall,
       fontWeight: FontWeight.w500,
+      fontFamily: 'Roboto',
     ),
-    bodyLarge: GoogleFonts.inter(
+    bodyLarge: TextStyle(
       fontSize: FontSizes.bodyLarge,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    bodyMedium: GoogleFonts.inter(
+    bodyMedium: TextStyle(
       fontSize: FontSizes.bodyMedium,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    bodySmall: GoogleFonts.inter(
+    bodySmall: TextStyle(
       fontSize: FontSizes.bodySmall,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
   ),
 );
@@ -186,65 +200,80 @@ ThemeData get darkTheme => ThemeData(
     surfaceTintColor: Colors.transparent,
   ),
   textTheme: TextTheme(
-    displayLarge: GoogleFonts.inter(
+    displayLarge: TextStyle(
       fontSize: FontSizes.displayLarge,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    displayMedium: GoogleFonts.inter(
+    displayMedium: TextStyle(
       fontSize: FontSizes.displayMedium,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    displaySmall: GoogleFonts.inter(
+    displaySmall: TextStyle(
       fontSize: FontSizes.displaySmall,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    headlineLarge: GoogleFonts.inter(
+    headlineLarge: TextStyle(
       fontSize: FontSizes.headlineLarge,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    headlineMedium: GoogleFonts.inter(
+    headlineMedium: TextStyle(
       fontSize: FontSizes.headlineMedium,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    headlineSmall: GoogleFonts.inter(
+    headlineSmall: TextStyle(
       fontSize: FontSizes.headlineSmall,
       fontWeight: FontWeight.bold,
+      fontFamily: 'Roboto',
     ),
-    titleLarge: GoogleFonts.inter(
+    titleLarge: TextStyle(
       fontSize: FontSizes.titleLarge,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    titleMedium: GoogleFonts.inter(
+    titleMedium: TextStyle(
       fontSize: FontSizes.titleMedium,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    titleSmall: GoogleFonts.inter(
+    titleSmall: TextStyle(
       fontSize: FontSizes.titleSmall,
       fontWeight: FontWeight.w500,
+      fontFamily: 'Roboto',
     ),
-    labelLarge: GoogleFonts.inter(
+    labelLarge: TextStyle(
       fontSize: FontSizes.labelLarge,
       fontWeight: FontWeight.w600,
+      fontFamily: 'Roboto',
     ),
-    labelMedium: GoogleFonts.inter(
+    labelMedium: TextStyle(
       fontSize: FontSizes.labelMedium,
       fontWeight: FontWeight.w500,
+      fontFamily: 'Roboto',
     ),
-    labelSmall: GoogleFonts.inter(
+    labelSmall: TextStyle(
       fontSize: FontSizes.labelSmall,
       fontWeight: FontWeight.w500,
+      fontFamily: 'Roboto',
     ),
-    bodyLarge: GoogleFonts.inter(
+    bodyLarge: TextStyle(
       fontSize: FontSizes.bodyLarge,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    bodyMedium: GoogleFonts.inter(
+    bodyMedium: TextStyle(
       fontSize: FontSizes.bodyMedium,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
-    bodySmall: GoogleFonts.inter(
+    bodySmall: TextStyle(
       fontSize: FontSizes.bodySmall,
       fontWeight: FontWeight.normal,
+      fontFamily: 'Roboto',
     ),
   ),
 );

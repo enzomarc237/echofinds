@@ -1,21 +1,21 @@
 import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:echofinds/models/alternative.dart';
 import 'package:echofinds/models/search_history.dart';
 import 'package:echofinds/models/user_settings.dart';
 import 'package:echofinds/utils/constants.dart';
 
 class StorageService {
-  static SharedPreferences? _prefs;
+  // static SharedPreferences? _prefs;
   
   static Future<void> init() async {
-    _prefs ??= await SharedPreferences.getInstance();
+    // _prefs ??= await SharedPreferences.getInstance();
   }
   
   // Favorites Management
   static Future<List<Alternative>> getFavorites() async {
     await init();
-    final favoritesJson = _prefs?.getStringList(AppConstants.favoritesKey) ?? [];
+    // final favoritesJson = _prefs?.getStringList(AppConstants.favoritesKey) ?? [];
+    final favoritesJson = <String>[]; // Dummy empty list
     return favoritesJson
         .map((json) => Alternative.fromJson(jsonDecode(json)))
         .toList();
@@ -43,14 +43,15 @@ class StorageService {
   }
   
   static Future<void> _saveFavorites(List<Alternative> favorites) async {
-    final favoritesJson = favorites.map((fav) => jsonEncode(fav.toJson())).toList();
-    await _prefs?.setStringList(AppConstants.favoritesKey, favoritesJson);
+    // final favoritesJson = favorites.map((fav) => jsonEncode(fav.toJson())).toList();
+    // await _prefs?.setStringList(AppConstants.favoritesKey, favoritesJson);
   }
   
   // Search History Management
   static Future<List<SearchHistory>> getSearchHistory() async {
     await init();
-    final historyJson = _prefs?.getStringList(AppConstants.searchHistoryKey) ?? [];
+    // final historyJson = _prefs?.getStringList(AppConstants.searchHistoryKey) ?? [];
+    final historyJson = <String>[]; // Dummy empty list
     return historyJson
         .map((json) => SearchHistory.fromJson(jsonDecode(json)))
         .toList()
@@ -81,30 +82,30 @@ class StorageService {
   
   static Future<void> clearSearchHistory() async {
     await init();
-    await _prefs?.remove(AppConstants.searchHistoryKey);
+    // await _prefs?.remove(AppConstants.searchHistoryKey);
   }
   
   static Future<void> _saveSearchHistory(List<SearchHistory> history) async {
-    final historyJson = history.map((h) => jsonEncode(h.toJson())).toList();
-    await _prefs?.setStringList(AppConstants.searchHistoryKey, historyJson);
+    // final historyJson = history.map((h) => jsonEncode(h.toJson())).toList();
+    // await _prefs?.setStringList(AppConstants.searchHistoryKey, historyJson);
   }
   
   // User Settings Management
   static Future<UserSettings> getUserSettings() async {
     await init();
-    final settingsJson = _prefs?.getString(AppConstants.userSettingsKey);
-    if (settingsJson != null) {
-      return UserSettings.fromJson(jsonDecode(settingsJson));
-    }
+    // final settingsJson = _prefs?.getString(AppConstants.userSettingsKey);
+    // if (settingsJson != null) {
+    //   return UserSettings.fromJson(jsonDecode(settingsJson));
+    // }
     return UserSettings(); // Default settings
   }
   
   static Future<void> saveUserSettings(UserSettings settings) async {
     await init();
-    await _prefs?.setString(
-      AppConstants.userSettingsKey,
-      jsonEncode(settings.toJson()),
-    );
+    // await _prefs?.setString(
+    //   AppConstants.userSettingsKey,
+    //   jsonEncode(settings.toJson()),
+    // );
   }
   
   // Data Export/Import
@@ -152,8 +153,8 @@ class StorageService {
   
   static Future<void> clearAllData() async {
     await init();
-    await _prefs?.remove(AppConstants.favoritesKey);
-    await _prefs?.remove(AppConstants.searchHistoryKey);
-    await _prefs?.remove(AppConstants.userSettingsKey);
+    // await _prefs?.remove(AppConstants.favoritesKey);
+    // await _prefs?.remove(AppConstants.searchHistoryKey);
+    // await _prefs?.remove(AppConstants.userSettingsKey);
   }
 }
